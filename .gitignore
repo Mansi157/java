@@ -1,23 +1,89 @@
-# Compiled class file
-*.class
+<h1 style="font:size=45px;">Bubble sort</h1>
 
-# Log file
-*.log
+<p style="font:size=21px;">
+// { Driver Code Starts
+//Initial Template for Java
 
-# BlueJ files
-*.ctxt
+import java.util.*;
+import java.io.*;
+class Sorting
+{
+    //method to print the Elements of the array
+    static void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+	public static void main(String args[])
+	{
+	    //taking input using Scanner class
+		Scanner sc = new Scanner(System.in);
+		
+		//taking total testcases
+		int t = sc.nextInt();
+		while(t>0)
+		{
+		    //taking total elements
+			int n = sc.nextInt();
+			
+			//creating a new array of length n
+			int arr[] = new int[n];
+			
+			//inserting elements to the array
+			for(int i=0;i<n;i++)
+			{
+				arr[i] = sc.nextInt(); 
+			}
+			
+			
+			//calling bubbleSort() method
+			bubbleSort(arr,n);
+			
+			//calling printArray() method
+			printArray(arr);
+			
+		t--;	
+		}
+	}
+	static void bubbleSort(int arr[], int n)
+	{
+	    int i, j;
+        for (i = 0; i < n-1; i++)      
+            new BubbleSort().bubble(arr, i, n);
+	 }
+}// } Driver Code Ends
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+//User function Template for Java
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+/* The task is to complete bubble() which is used 
+   in below bubbleSort() */
+
+/* A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+   for (int i = 0; i < n-1; i++)      
+        bubble(arr, i, n);
+} */
+class BubbleSort
+{
+	static void bubble(int arr[], int i, int n)
+    {
+       // add your code here
+       //You do not need to print
+       int temp=0;
+      
+           for(int j=1;j<n-i;j++){
+               if(arr[j-1]>arr[j]){
+                   temp=arr[j-1];
+                   arr[j-1]=arr[j];
+                   arr[j]=temp;
+               }
+           }
+
+    }
+}
+
+</p>
